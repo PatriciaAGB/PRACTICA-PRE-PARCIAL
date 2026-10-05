@@ -1,0 +1,1224 @@
+/* =========================================================
+   PINOCHO — EL CAMINO PARA SER REAL
+   CSS EXTERNO
+   ========================================================= */
+
+
+/* =========================================================
+   TIPOGRAFÍAS
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Isometra&family=Montserrat:wght@300;400;500;600;700&family=Playwrite+AR:wght@100..400&display=swap');
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+
+    --rojo: #AB2F16;
+    --azul: #1A3787;
+    --crema: #EBC48F;
+    --dorado: #BAA129;
+
+    --madera-1: #160b07;
+    --madera-2: #2b160e;
+    --madera-3: #4a2919;
+
+    --blanco: #fff7e9;
+    --sombra: rgba(0, 0, 0, 0.75);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 100%;
+    min-height: 100%;
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background: var(--madera-1);
+
+    color: var(--blanco);
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* =========================================================
+   TIPOGRAFÍAS
+   ========================================================= */
+
+h1 {
+    font-family: 'Isometra', serif;
+    font-weight: 400;
+}
+
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+a {
+    font-family: 'Playwrite AR', cursive;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   PANTALLA DE ENTRADA
+   ========================================================= */
+
+#entrada-taller {
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    position: relative;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 38%,
+            rgba(235, 196, 143, 0.23),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            transparent 25%,
+            rgba(0, 0, 0, 0.65) 100%
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            #3c2014 0,
+            #3c2014 110px,
+            #32190f 112px,
+            #32190f 116px
+        );
+
+}
+
+
+/* Vignette */
+
+#entrada-taller::before {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 30%,
+            rgba(0, 0, 0, 0.75) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Luz del taller */
+
+#entrada-taller::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -180px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 700px;
+    height: 550px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 214, 151, 0.16),
+            transparent 67%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PUERTA / CARTEL PRINCIPAL
+   ========================================================= */
+
+.puerta-taller {
+
+    width: min(900px, 94%);
+
+    min-height: 600px;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 70px;
+
+    text-align: center;
+
+    border: 10px solid #512b19;
+
+    outline: 2px solid rgba(186, 161, 41, 0.65);
+
+    outline-offset: -25px;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(235, 196, 143, 0.10),
+            transparent 55%
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            #402215 0,
+            #402215 90px,
+            #321a10 92px,
+            #321a10 96px
+        );
+
+    box-shadow:
+        inset 0 0 70px rgba(0, 0, 0, 0.75),
+        0 35px 90px rgba(0, 0, 0, 0.75);
+}
+
+
+.sobre-titulo {
+
+    margin-bottom: 20px;
+
+    color: var(--dorado);
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+}
+
+
+.puerta-taller h1 {
+
+    max-width: 800px;
+
+    color: var(--crema);
+
+    font-size: clamp(3.5rem, 8vw, 7rem);
+
+    line-height: 1;
+
+    text-shadow:
+        0 4px 0 #662316,
+        0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+
+.ornamento {
+
+    margin: 25px 0;
+
+    color: var(--dorado);
+
+    font-size: 1.3rem;
+}
+
+
+.puerta-taller > p:not(.sobre-titulo) {
+
+    max-width: 620px;
+
+    color: #f7e8d2;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+.puerta-taller .indicacion {
+
+    margin-top: 15px;
+
+    opacity: 0.65;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   BOTÓN DE ENTRADA
+   ========================================================= */
+
+#entrar-taller {
+
+    margin-top: 40px;
+
+    padding: 18px 35px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c33e22,
+            var(--rojo)
+        );
+
+    border: 2px solid #d9896e;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 0 #63190d,
+        0 15px 30px rgba(0, 0, 0, 0.5);
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+#entrar-taller:hover {
+
+    transform: translateY(-5px);
+
+    filter: brightness(1.12);
+
+    box-shadow:
+        0 12px 0 #63190d,
+        0 20px 35px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   OCULTAR PORTADA AL ENTRAR
+   ========================================================= */
+
+body:has(.nodo:target) #entrada-taller {
+    display: none;
+}
+
+
+/* =========================================================
+   HISTORIA
+   ========================================================= */
+
+#historia {
+
+    width: 100%;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   NODOS
+   ========================================================= */
+
+.nodo {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    padding:
+        clamp(110px, 13vh, 150px)
+        clamp(30px, 8vw, 130px)
+        80px;
+
+    overflow: hidden;
+}
+
+
+/* Mostrar únicamente el nodo seleccionado */
+
+.nodo:target {
+    display: flex;
+}
+
+
+/* =========================================================
+   CONTENIDO DE CADA NODO
+   ========================================================= */
+
+.contenido-nodo {
+
+    width: min(900px, 100%);
+
+    position: relative;
+
+    z-index: 3;
+
+    margin: auto;
+
+    padding:
+        clamp(40px, 6vw, 70px)
+        clamp(30px, 7vw, 80px);
+
+    border: 1px solid rgba(235, 196, 143, 0.35);
+
+    background: rgba(18, 9, 5, 0.75);
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.65),
+        inset 0 0 45px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(3px);
+}
+
+
+.contenido-nodo::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px solid rgba(186, 161, 41, 0.25);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TEXTOS
+   ========================================================= */
+
+.numero-nodo {
+
+    margin-bottom: 15px !important;
+
+    color: var(--dorado) !important;
+
+    text-align: center;
+
+    font-size: 0.67rem !important;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+
+.nodo h1 {
+
+    margin-bottom: 15px;
+
+    color: var(--crema);
+
+    text-align: center;
+
+    font-size: clamp(3rem, 6vw, 5.5rem);
+
+    line-height: 1.05;
+
+    text-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.65);
+}
+
+
+.separador {
+
+    margin: 15px auto 35px;
+
+    color: var(--dorado);
+
+    text-align: center;
+
+    font-size: 0.8rem;
+}
+
+
+.nodo p {
+
+    max-width: 760px;
+
+    margin: 0 auto 19px;
+
+    color: #f6e9d8;
+
+    font-size: 1rem;
+
+    line-height: 1.85;
+}
+
+
+.nodo strong {
+    color: var(--crema);
+}
+
+
+.dialogo {
+
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+
+    padding: 18px 25px;
+
+    border-left: 4px solid var(--dorado);
+
+    background: rgba(235, 196, 143, 0.06);
+
+    font-style: italic;
+}
+
+
+.pregunta {
+
+    margin-top: 38px !important;
+
+    color: var(--crema) !important;
+
+    text-align: center;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CAMINO CREMA
+   ========================================================= */
+
+.camino-crema {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(235, 196, 143, 0.20),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(0, 0, 0, 0.65) 100%
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            #382014 0,
+            #382014 100px,
+            #2b160e 102px,
+            #2b160e 106px
+        );
+}
+
+
+/* =========================================================
+   CAMINO ROJO
+   ========================================================= */
+
+.camino-rojo {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(171, 47, 22, 0.32),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(0, 0, 0, 0.75) 100%
+        ),
+
+        linear-gradient(
+            135deg,
+            #3c130c,
+            #1a0906
+        );
+}
+
+
+.camino-rojo h1 {
+    color: #dc735d;
+}
+
+
+/* =========================================================
+   CAMINO AZUL
+   ========================================================= */
+
+.camino-azul {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(26, 55, 135, 0.42),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(0, 0, 0, 0.72) 100%
+        ),
+
+        linear-gradient(
+            135deg,
+            #101d44,
+            #080d1c
+        );
+}
+
+
+.camino-azul h1 {
+    color: #8da7ec;
+}
+
+
+/* =========================================================
+   CAMINO DORADO
+   ========================================================= */
+
+.camino-dorado {
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(186, 161, 41, 0.32),
+            transparent 40%
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(0, 0, 0, 0.72) 100%
+        ),
+
+        linear-gradient(
+            135deg,
+            #3a310d,
+            #171304
+        );
+}
+
+
+.camino-dorado h1 {
+    color: #e2cb5d;
+}
+
+
+/* =========================================================
+   DECISIONES
+   ========================================================= */
+
+.decisiones {
+
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+    /*
+       Este espacio amplio evita que las alas
+       de los moños se superpongan.
+    */
+
+    column-gap: 150px;
+    row-gap: 65px;
+
+    margin: 55px auto 15px;
+
+    padding:
+        0
+        70px;
+}
+
+
+.una-opcion {
+    column-gap: 0;
+}
+
+
+/* =========================================================
+   BOTONES CON FORMA DE MOÑO
+   ========================================================= */
+
+.opcion {
+
+    width: 245px;
+    min-width: 245px;
+
+    min-height: 85px;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 18px 30px;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 0.85rem;
+
+    line-height: 1.5;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c63f23,
+            var(--rojo)
+        );
+
+    border: 2px solid #d77c66;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 9px 0 #64180d,
+        0 16px 28px rgba(0, 0, 0, 0.45);
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Ala izquierda */
+
+.opcion::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: -58px;
+
+    transform: translateY(-50%);
+
+    width: 75px;
+    height: 75px;
+
+    z-index: -1;
+
+    background: var(--rojo);
+
+    clip-path:
+        polygon(
+            100% 50%,
+            0 0,
+            15% 50%,
+            0 100%
+        );
+
+    filter:
+        drop-shadow(
+            -5px 7px 3px rgba(0, 0, 0, 0.35)
+        );
+}
+
+
+/* Ala derecha */
+
+.opcion::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    right: -58px;
+
+    transform: translateY(-50%);
+
+    width: 75px;
+    height: 75px;
+
+    z-index: -1;
+
+    background: var(--rojo);
+
+    clip-path:
+        polygon(
+            0 50%,
+            100% 0,
+            85% 50%,
+            100% 100%
+        );
+
+    filter:
+        drop-shadow(
+            5px 7px 3px rgba(0, 0, 0, 0.35)
+        );
+}
+
+
+.opcion:hover {
+
+    transform:
+        translateY(-6px)
+        scale(1.03);
+
+    filter: brightness(1.15);
+
+    box-shadow:
+        0 13px 0 #64180d,
+        0 22px 32px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   MOÑOS AZULES EN CAMINO AZUL
+   ========================================================= */
+
+.camino-azul .opcion {
+
+    background:
+        linear-gradient(
+            145deg,
+            #3157b5,
+            var(--azul)
+        );
+
+    border-color: #718bd1;
+
+    box-shadow:
+        0 9px 0 #091b50,
+        0 16px 28px rgba(0, 0, 0, 0.45);
+}
+
+
+.camino-azul .opcion::before,
+.camino-azul .opcion::after {
+    background: var(--azul);
+}
+
+
+/* =========================================================
+   FINALES
+   ========================================================= */
+
+.cierre-final {
+
+    max-width: 700px;
+
+    margin: 50px auto 20px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(235, 196, 143, 0.35);
+    border-bottom: 1px solid rgba(235, 196, 143, 0.35);
+}
+
+
+.etiqueta-final {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--dorado);
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 6px;
+}
+
+
+.cierre-final h1 {
+
+    margin-bottom: 25px;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+}
+
+
+.cierre-final p {
+    text-align: center;
+}
+
+
+.fin {
+
+    display: block;
+
+    margin-top: 30px;
+
+    color: var(--dorado);
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================================================
+   REPRODUCTOR DE MÚSICA
+   ========================================================= */
+
+#control-musica {
+
+    display: none;
+
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 100;
+
+    width: 300px;
+
+    padding: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(63, 34, 20, 0.97),
+            rgba(25, 12, 7, 0.97)
+        );
+
+    border: 1px solid rgba(235, 196, 143, 0.55);
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Aparece cuando se ingresa a cualquier nodo */
+
+body:has(.nodo:target) #control-musica {
+    display: block;
+}
+
+
+.encabezado-musica {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 9px;
+}
+
+
+.nota-musical {
+
+    color: var(--dorado);
+
+    font-size: 1.3rem;
+}
+
+
+.titulo-musica {
+
+    display: block;
+
+    color: var(--crema);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.subtitulo-musica {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: rgba(255, 247, 233, 0.55);
+
+    font-size: 0.58rem;
+}
+
+
+/* YouTube */
+
+#control-musica iframe {
+
+    display: block;
+
+    width: 100%;
+    height: 75px;
+
+    border: 0;
+
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .nodo {
+
+        padding:
+            115px
+            25px
+            60px;
+    }
+
+
+    .contenido-nodo {
+
+        padding:
+            45px
+            35px;
+    }
+
+
+    .decisiones {
+
+        flex-direction: column;
+
+        gap: 60px;
+
+        padding:
+            0
+            70px;
+    }
+
+
+    .opcion {
+
+        width: 235px;
+        min-width: 235px;
+    }
+
+
+    #control-musica {
+
+        width: 260px;
+
+        top: 15px;
+        right: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    #entrada-taller {
+        padding: 18px;
+    }
+
+
+    .puerta-taller {
+
+        width: 100%;
+
+        min-height: 600px;
+
+        padding:
+            60px
+            30px;
+    }
+
+
+    .puerta-taller h1 {
+
+        font-size: 3.3rem;
+    }
+
+
+    #entrar-taller {
+
+        padding:
+            16px
+            20px;
+
+        font-size: 0.78rem;
+    }
+
+
+    .nodo {
+
+        padding:
+            145px
+            15px
+            45px;
+    }
+
+
+    .contenido-nodo {
+
+        padding:
+            40px
+            22px;
+    }
+
+
+    .nodo h1 {
+
+        font-size: 2.8rem;
+    }
+
+
+    .nodo p {
+
+        font-size: 0.94rem;
+
+        line-height: 1.75;
+    }
+
+
+    /*
+       Una sola opción por fila.
+       Dejamos espacio para las alas.
+    */
+
+    .decisiones {
+
+        flex-direction: column;
+
+        gap: 55px;
+
+        padding:
+            0
+            45px;
+    }
+
+
+    .opcion {
+
+        width: 190px;
+        min-width: 190px;
+
+        min-height: 76px;
+
+        padding:
+            15px
+            18px;
+
+        font-size: 0.72rem;
+    }
+
+
+    .opcion::before {
+
+        left: -39px;
+
+        width: 52px;
+        height: 60px;
+    }
+
+
+    .opcion::after {
+
+        right: -39px;
+
+        width: 52px;
+        height: 60px;
+    }
+
+
+    /*
+       Música arriba ocupando casi todo
+       el ancho para que no tape el texto.
+    */
+
+    #control-musica {
+
+        top: 10px;
+        left: 50%;
+        right: auto;
+
+        transform: translateX(-50%);
+
+        width: calc(100% - 30px);
+
+        max-width: 330px;
+    }
+
+
+    #control-musica iframe {
+        height: 65px;
+    }
+
+}
